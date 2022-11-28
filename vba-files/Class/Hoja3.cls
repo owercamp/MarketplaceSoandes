@@ -9,3 +9,8 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
 Option Explicit
 
+Private Sub Worksheet_Change(ByVal Target As Range)
+    
+  If Target.Column = 6 And Trim(UCase(Target.Value)) = "OK" Then: Target.Offset(, -1) = Empty
+  
+End Sub
